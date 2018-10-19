@@ -21,7 +21,7 @@ Bindings provide the glue code for an interpreted language environment to run ga
 ### MRI
 Website: https://www.ruby-lang.org/en/
 
-Matz's Ruby Interpreter, also called CRuby, is the most widely deployed version of ruby. If you're interested in running games created with RPG Maker XP, this is the one you should go for. MRI 1.8 is what was used in RPG Maker XP, however, this binding is written against 2.0 (the latest version). For games utilizing only the default scripts provided by Enterbrain, this binding works quite well so far. Note that there are language and syntax differences between 1.8 and 2.0, so some user created scripts may not work correctly.
+Matz's Ruby Interpreter, also called CRuby, is the most widely deployed version of ruby. If you're interested in running games created with RPG Maker XP, this is the one you should go for. MRI 1.8 is what was used in RPG Maker XP, however, this binding is written against 2.5 (the latest version). For games utilizing only the default scripts provided by Enterbrain, this binding works quite well so far. Note that there are language and syntax differences between 1.8 and 2.5, so some user created scripts may not work correctly.
 
 For a list of differences, see:
 http://stackoverflow.com/questions/21574/what-is-the-difference-between-ruby-1-8-and-ruby-1-9
@@ -81,6 +81,8 @@ It will create a build directory where it will run CMake and later execute make 
 
 Take in consideration that you need Ancurio's SDL_sound fork installed on your system. Your OS package manager, i.e. pacman or apt-get, might offer you to install a default version of SDL_sound. DO NOT INSTALL IT! Both mkxp and mkxpplus will fail for sure if you do not follow my advice!
 
+Search for `set(MRIVERSION` in the CMakeLists.txt file to set a different version of Ruby. Default version is 2.5 now.
+
 ### Boost
 
 The exception is boost, which is weird in that it still hasn't managed to pull off pkg-config support (seriously?). *If you installed boost in a non-standard prefix*, you will need to pass its include path via `BOOST_I` and library path via `BOOST_L`, either as direct arguments to qmake (`qmake BOOST_I="/usr/include" ...`) or via environment variables. You can specify a library suffix (eg. "-mt") via `BOOST_LIB_SUFFIX` if needed.
@@ -91,7 +93,7 @@ By default, mkxp switches into the directory where its binary is contained and t
 
 To auto detect the encoding of the game title in `Game.ini` and auto convert it to UTF-8, build with `CONFIG+=INI_ENCODING`. Requires iconv implementation and libguess. If the encoding is wrongly detected, you can set the "titleLanguage" hint in mkxp.conf.
 
-**MRI-Binding**: pkg-config will look for `ruby-2.1.pc`, but you can override the version with `MRIVERSION=2.2` ('2.2' being an example). This is the default binding, so no arguments to qmake needed (`BINDING=MRI` to be explicit).
+**MRI-Binding**: pkg-config will look for `ruby-2.5.pc`, but you can override the version with `MRIVERSION=2.2` ('2.2' being an example). This is the default binding, so no arguments to qmake needed (`BINDING=MRI` to be explicit).
 
 **MRuby-Binding**: place the "mruby" folder into the project folder and build it first. Add `BINDING=MRUBY` to qmake's arguments.
 
