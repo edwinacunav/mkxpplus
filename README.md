@@ -6,7 +6,7 @@ mkxp Documentation is still valid so do not forget to check it out!
 
 ## About mkxp
 
-mkxp is a project that seeks to provide a fully open source implementation of the Ruby Game Scripting System (RGSS) interface used in the popular game creation software "RPG Maker XP", "RPG Maker VX" and "RPG Maker VX Ace" (trademark by Enterbrain, Inc.), with focus on Linux. The goal is to be able to run games created with the above software natively without changing a single file.
+[mkxp](https://github.com/Ancurio/mkxp) is a project that seeks to provide a fully open source implementation of the Ruby Game Scripting System (RGSS) interface used in the popular game creation software "RPG Maker XP", "RPG Maker VX" and "RPG Maker VX Ace" (trademark by Enterbrain, Inc.), with focus on Linux. The goal is to be able to run games created with the above software natively without changing a single file.
 
 It is licensed under the GNU General Public License v2+.
 
@@ -54,7 +54,7 @@ This binding only exists for testing purposes and does nothing (the engine quits
 * SDL2*
 * SDL2_image
 * SDL2_ttf
-* [my SDL_sound fork](https://github.com/Ancurio/SDL_sound)
+* [Ancurio's SDL_sound fork](https://github.com/Ancurio/SDL_sound)
 * vorbisfile
 * pixman
 * zlib (only ruby bindings)
