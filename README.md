@@ -2,6 +2,8 @@
 
 mkxpplus is a project based upon mkxp developed by Ancurio. It should let you play RGSS1 based games on a 800 * 608 resolution by default, but you might change it before compiling it if deemed necessary.
 
+After you have finished compiling the binary executable, you should also open the Map800ResFixes.rb text file with a text editor like Notepad++ or change its file extension to txt if you plan to use Windows Notepad application. On Linux distributions you can use your favorite text editor, for KDE GUI based systems Kate or KWrite should be fine. Once you have opened it copy its contents and paste them in the script editor below Scene_Debug and before Main scripts.
+
 mkxp Documentation is still valid so do not forget to check it out!
 
 ## About mkxp
@@ -10,10 +12,12 @@ mkxp Documentation is still valid so do not forget to check it out!
 
 It is licensed under the GNU General Public License v2+.
 
-## 640W Prebuilt binaries
+## 640px Wide Prebuilt binaries
 [**Linux (32bit/64bit)**](http://ancurio.bplaced.net/mkxp/generic/)  
 [**OSX**](https://app.box.com/mkxpmacbuilds) by Ali  
 [**Windows (mingw-w64 32bit)**](http://ancurio.bplaced.net/mkxp/mingw32/)
+
+If you are planning to sport 640 pixel wide games, you should go for mkxp instead.
 
 ## Bindings
 Bindings provide the glue code for an interpreted language environment to run game scripts in. Currently there are three bindings:
@@ -73,7 +77,7 @@ qmake will use pkg-config to locate the respective include/library paths. If you
 
 You can compile it with CMake by running my custom shell script do.sh on your terminal by typing the following in the project's root directory:
 
-./do.sh
+./compile.sh
 
 You might need to use chmod +x do.sh first to make it an executable script.
 

@@ -63,9 +63,9 @@ static const int atAreaH = autotileH * autotileCount;
 
 static const int tsLaneW = tilesetW / 2;
 
-/* Map viewport size */
-static const int viewpW = 21;
-static const int viewpH = 16;
+/* Map viewport size - Default Width: 21, Default Height: 16 (Add 1 to some XP Max W or H Coord)*/
+static const int viewpW = 26;
+static const int viewpH = 20;
 
 static const size_t zlayersMax = viewpH + 5;
 
