@@ -21,7 +21,7 @@
 
 #ifndef VIEWPORTELEMENTBINDING_H
 #define VIEWPORTELEMENTBINDING_H
-
+// Included viewport= in RGSS1
 #include "viewport.h"
 #include "sharedstate.h"
 #include "binding-util.h"
@@ -97,10 +97,10 @@ viewportElementBindingInit(VALUE klass)
 
 	_rb_define_method(klass, "viewport", viewportElementGetViewport<C>);
 
-	if (rgssVer >= 2)
-	{
+	/*if (rgssVer >= 2)
+	{ */
 	_rb_define_method(klass, "viewport=", viewportElementSetViewport<C>);
-	}
+	//}
 }
 
 #endif // VIEWPORTELEMENTBINDING_H

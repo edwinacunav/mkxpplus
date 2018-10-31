@@ -121,12 +121,11 @@ spriteBindingInit()
 	INIT_PROP_BIND( Sprite, BlendType, "blend_type" );
 	INIT_PROP_BIND( Sprite, Color,     "color"      );
 	INIT_PROP_BIND( Sprite, Tone,      "tone"       );
-
-	if (rgssVer >= 2)
-	{
+        // Modified condition for RGSS 2 and #
 	_rb_define_method(klass, "width", spriteWidth);
 	_rb_define_method(klass, "height", spriteHeight);
-
+        if (rgssVer >= 2)
+	{
 	INIT_PROP_BIND( Sprite, BushOpacity, "bush_opacity" );
 
 	INIT_PROP_BIND( Sprite, WaveAmp,    "wave_amp"    );

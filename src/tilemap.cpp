@@ -19,6 +19,7 @@
 ** along with mkxp.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "resolution.h"
 #include "tilemap.h"
 
 #include "viewport.h"
@@ -63,9 +64,9 @@ static const int atAreaH = autotileH * autotileCount;
 
 static const int tsLaneW = tilesetW / 2;
 
-/* Map viewport size - Default Width: 21, Default Height: 16 (Add 1 to some XP Max W or H Coord)*/
-static const int viewpW = 26;
-static const int viewpH = 20;
+/* Map viewport size - Original Width: 21, Original Height: 16 (Add 1 to some XP Max W or H Coord)*/
+static const int viewpW = TILE_WIDTH_MAX;
+static const int viewpH = TILE_HEIGHT_MAX;
 
 static const size_t zlayersMax = viewpH + 5;
 

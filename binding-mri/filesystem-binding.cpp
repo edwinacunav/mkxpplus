@@ -128,7 +128,7 @@ kernelLoadDataInt(const char *filename, bool rubyExc)
 	rb_gc_start();
 
 	VALUE port = fileIntForPath(filename, rubyExc);
-
+        if (RB_NIL_P(port)) return Qnil; // Plus - Return if there's no file!
 	VALUE marsh = rb_const_get(rb_cObject, rb_intern("Marshal"));
 
 	// FIXME need to catch exceptions here with begin rescue

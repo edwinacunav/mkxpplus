@@ -306,7 +306,7 @@ rb_get_args(int argc, VALUE *argv, const char *format, ...)
 
 	// FIXME print num of needed args vs provided
 	if (!c && argc > argI)
-		rb_raise(rb_eArgError, "wrong number of arguments");
+          rb_raise(rb_eArgError, "wrong number of arguments, you sent %d instead of...", argc);
 
 	/* Verify correct termination */
 	void *argEnd = va_arg(ap, void*);

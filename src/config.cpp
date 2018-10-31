@@ -20,7 +20,7 @@
 */
 
 #include "config.h"
-
+#include "resolution.h"
 #include <boost/program_options/options_description.hpp>
 #include <boost/program_options/parsers.hpp>
 #include <boost/program_options/variables_map.hpp>
@@ -290,11 +290,11 @@ static std::string baseName(const std::string &path)
 static void setupScreenSize(Config &conf)
 {
 	if (conf.defScreenW < 1)
-		conf.defScreenW = (conf.rgssVersion == 1 ? 800 : 544); // RGSS1 Max Width 640
-
+		conf.defScreenW = WIDTH_MAX;
+ //(conf.rgssVersion == 1 ? 640 : 544); // RGSS1 and RGSS2/3 Max Width
 	if (conf.defScreenH < 1)
-		conf.defScreenH = (conf.rgssVersion == 1 ? 608 : 416); // RGSS1 Max Height 480
-}
+		conf.defScreenH = HEIGHT_MAX;
+} //(conf.rgssVersion == 1 ? 480 : 416); // RGSS1 and RGSS2/3 MaxHeight
 
 void Config::readGameINI()
 {

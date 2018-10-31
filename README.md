@@ -2,7 +2,7 @@
 
 mkxpplus is a project based upon mkxp developed by Ancurio. It should let you play RGSS1 based games on a 800 * 608 resolution by default, but you might change it before compiling it if deemed necessary.
 
-After you have finished compiling the binary executable, you should also open the Map800ResFixes.rb text file with a text editor like Notepad++ or change its file extension to txt if you plan to use Windows Notepad application. On Linux distributions you can use your favorite text editor, for KDE GUI based systems Kate or KWrite should be fine. Once you have opened it copy its contents and paste them in the script editor below Scene_Debug and before Main scripts.
+After you have finished compiling the binary executable, you should also open the MapCustomResFixes.rb (for RMXP games) text file with a text editor like Notepad++ or change its file extension to txt if you plan to use Windows Notepad application. On Linux distributions you can use your favorite text editor, for KDE GUI based systems Kate or KWrite should be fine. Once you have opened it copy its contents and paste them in the script editor below Scene_Debug and before Main scripts.
 
 mkxp Documentation is still valid so do not forget to check it out!
 

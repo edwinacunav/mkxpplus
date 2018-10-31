@@ -111,22 +111,19 @@ static void mriBindingInit()
 	audioBindingInit();
 	graphicsBindingInit();
 	fileIntBindingInit();
-
+// Set msgbox and print methods as always available
+		_rb_define_module_function(rb_mKernel, "msgbox",    mriPrint);
+		_rb_define_module_function(rb_mKernel, "msgbox_p",  mriP);
+		_rb_define_module_function(rb_mKernel, "print", mriPrint);
+		_rb_define_module_function(rb_mKernel, "p",     mriP);
 	if (rgssVer >= 3)
 	{
 		_rb_define_module_function(rb_mKernel, "rgss_main", mriRgssMain);
 		_rb_define_module_function(rb_mKernel, "rgss_stop", mriRgssStop);
-
-		_rb_define_module_function(rb_mKernel, "msgbox",    mriPrint);
-		_rb_define_module_function(rb_mKernel, "msgbox_p",  mriP);
-
 		rb_define_global_const("RGSS_VERSION", rb_str_new_cstr("3.0.1"));
 	}
 	else
 	{
-		_rb_define_module_function(rb_mKernel, "print", mriPrint);
-		_rb_define_module_function(rb_mKernel, "p",     mriP);
-
 		rb_define_alias(rb_singleton_class(rb_mKernel), "_mkxp_kernel_caller_alias", "caller");
 		_rb_define_module_function(rb_mKernel, "caller", _kernelCaller);
 	}

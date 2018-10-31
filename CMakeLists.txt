@@ -99,6 +99,7 @@ find_package(ZLIB REQUIRED)
 ## Setup main source ##
 
 set(MAIN_HEADERS
+        src/resolution.h
 	src/quadarray.h
 	src/audio.h
 	src/binding.h

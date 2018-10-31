@@ -48,8 +48,7 @@
 #include <algorithm>
 
 // Increased Screen Resolution for RGSS1
-#define DEF_SCREEN_W  (rgssVer == 1 ? 800 : 544)
-#define DEF_SCREEN_H  (rgssVer == 1 ? 608 : 416)
+#include "resolution.h"
 #define DEF_FRAMERATE (rgssVer == 1 ?  40 :  60)
 
 struct PingPong
@@ -482,7 +481,7 @@ struct GraphicsPrivate
 	IntruList<Disposable> dispList;
 
 	GraphicsPrivate(RGSSThreadData *rtData)
-	    : scRes(DEF_SCREEN_W, DEF_SCREEN_H),
+	    : scRes(WIDTH_MAX, HEIGHT_MAX),
 	      scSize(scRes),
 	      winSize(rtData->config.defScreenW, rtData->config.defScreenH),
 	      screen(scRes.x, scRes.y),
@@ -927,8 +926,8 @@ int Graphics::height() const
 
 void Graphics::resizeScreen(int width, int height)
 {
-	width = clamp(width, 1, 800); // 640);
-	height = clamp(height, 1, 608); // 480);
+	width = clamp(width, 1, WIDTH_MAX);
+	height = clamp(height, 1, HEIGHT_MAX);
 
 	Vec2i size(width, height);
 
