@@ -1,8 +1,12 @@
 # mkxpplus
 
-mkxpplus is a project based upon mkxp developed by Ancurio. It should let you play RGSS1 based games on a 800 * 608 resolution by default, but you might change it before compiling it if deemed necessary.
+mkxpplus is a project based upon mkxp developed by Ancurio. It should let you play RGSS based games on a 800 * 608 resolution by default, but you might change it before compiling it if deemed necessary.
 
 After you have finished compiling the binary executable, you should also open the MapCustomResFixes.rb (for RMXP games) text file with a text editor like Notepad++ or change its file extension to txt if you plan to use Windows Notepad application. On Linux distributions you can use your favorite text editor, for KDE GUI based systems Kate or KWrite should be fine. Once you have opened it copy its contents and paste them in the script editor below Scene_Debug and before Main scripts.
+
+The Sprite#mirror_y alias Sprite#flip_y method has been added!
+
+Except for the increased window resolution and the Y axis flip features, everything remains the same as in the original mkxp project.
 
 mkxp Documentation is still valid so do not forget to check it out!
 
@@ -25,7 +29,9 @@ Bindings provide the glue code for an interpreted language environment to run ga
 ### MRI
 Website: https://www.ruby-lang.org/en/
 
-Matz's Ruby Interpreter, also called CRuby, is the most widely deployed version of ruby. If you're interested in running games created with RPG Maker XP, this is the one you should go for. MRI 1.8 is what was used in RPG Maker XP, however, this binding is written against 2.5 (the latest version). For games utilizing only the default scripts provided by Enterbrain, this binding works quite well so far. Note that there are language and syntax differences between 1.8 and 2.5, so some user created scripts may not work correctly.
+Matz's Ruby Interpreter, also called CRuby for it has a C based API, is the most widely deployed version of Ruby. If you're interested in running games created with RPG Maker XP, this is the one you should go for. MRI 1.8 is what was used in RPG Maker XP, however, this binding is written against 2.5 (the current stable version). For games utilizing only the default scripts provided by Enterbrain, this binding works quite well so far.
+
+Note that there are language and syntax differences between 1.8 and 2.5, so some user created scripts may not work correctly. Version 2.5 will not forgive you if you use the old syntax like in case statements where people used to place a colon after a when condition, i.e. when 2 : call_battle. The colon should be replace with a then keyword to enforce compatibility with later versions of Ruby.
 
 For a list of differences, see:
 http://stackoverflow.com/questions/21574/what-is-the-difference-between-ruby-1-8-and-ruby-1-9
@@ -44,6 +50,8 @@ Some extensions to the standard classes/modules are provided, taking the RPG Mak
 This binding only supports RGSS1.
 
 **Important:** If you decide to use [mattn's oniguruma regexp gem](https://github.com/mattn/mruby-onig-regexp), don't forget to add `-lonig` to the linker flags to avoid ugly symbol overlaps with libc.
+
+It has been reported that mruby's Array does not support instance variables, and puts method displays its arguments as an array without any new line character.
 
 ### null
 This binding only exists for testing purposes and does nothing (the engine quits immediately). It can be used to eg. run a minimal RGSS game loop directly in C++.

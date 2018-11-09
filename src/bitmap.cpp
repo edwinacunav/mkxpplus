@@ -1275,48 +1275,45 @@ DEF_ATTR_RD_SIMPLE(Bitmap, Font, Font&, *p->font)
 
 void Bitmap::setFont(Font &value)
 {
-	*p->font = value;
+  *p->font = value;
 }
 
 void Bitmap::setInitFont(Font *value)
 {
-	p->font = value;
+  p->font = value;
 }
 
 TEXFBO &Bitmap::getGLTypes()
 {
-	return p->gl;
+  return p->gl;
 }
 
 SDL_Surface *Bitmap::megaSurface() const
 {
-	return p->megaSurface;
+  return p->megaSurface;
 }
 
 void Bitmap::ensureNonMega() const
 {
-	if (isDisposed())
-		return;
-
-	GUARD_MEGA;
+  if (isDisposed()) return;
+  GUARD_MEGA;
 }
 
 void Bitmap::bindTex(ShaderBase &shader)
 {
-	p->bindTexture(shader);
+  p->bindTexture(shader);
 }
 
 void Bitmap::taintArea(const IntRect &rect)
 {
-	p->addTaintedArea(rect);
+  p->addTaintedArea(rect);
 }
 
 void Bitmap::releaseResources()
 {
-	if (p->megaSurface)
-		SDL_FreeSurface(p->megaSurface);
-	else
-		shState->texPool().release(p->gl);
-
-	delete p;
+  if (p->megaSurface)
+    SDL_FreeSurface(p->megaSurface);
+  else
+    shState->texPool().release(p->gl);
+  delete p;
 }
