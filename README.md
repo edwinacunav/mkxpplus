@@ -144,7 +144,7 @@ If a requested font is not found, no error is generated. Instead, a built-in fon
 
 ## What doesn't work (yet)
 
-* Expand RGSS1 tilesets to fill the enlarged screen
+* [FIXED] Expand RGSS1 tilesets to fill the enlarged screen
 * Movie playback
 * wma audio files
 * The Win32API ruby class (for obvious reasons)
